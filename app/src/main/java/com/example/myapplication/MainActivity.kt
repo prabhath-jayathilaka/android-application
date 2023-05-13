@@ -12,8 +12,15 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
     fun visitNextUI(view: View?){
+        val bundle = Bundle()
+         bundle.putString("name","This Is user Name")
+         bundle.putString("email","example@mail.com")
+
         Log.d("fun","In Function")
+        Log.d("fun",bundle.getString("name").toString())
+
         val  gotToNextScreen = Intent(applicationContext,SecondScreen::class.java)
+        gotToNextScreen.putExtras(bundle)
         startActivity(gotToNextScreen)
 
     }
